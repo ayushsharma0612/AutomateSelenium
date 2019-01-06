@@ -13,6 +13,7 @@ public class AutomateBluestone {
 	
 	public static void main(String[] args) throws InterruptedException {
 		
+		
 		System.setProperty("webdriver.chrome.driver","/AutomateSelenium/exefiles/chromedriver.exe");
 		WebDriver driver=new ChromeDriver();
 		driver.manage().window().maximize();

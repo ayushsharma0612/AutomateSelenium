@@ -3,6 +3,7 @@ package Package1;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -33,10 +34,15 @@ public class BluestoneAutomate {
 		driver.findElement(By.xpath("//input[contains(@id,'container')]")).sendKeys("9013974946");
 		driver.findElement(By.xpath("//input[@value='Start the chat']")).click();
 		
-		WebElement msgbx = driver.findElement(By.name("files"));
-		msgbx.click();
-		Thread.sleep(2000);
+		
+		driver.switchTo().defaultContent();
+		
+		driver.switchTo().frame("livechat-full-view");
+		WebElement msgbx = driver.findElement(By.id("message-placeholder"));
+				msgbx.click();
+		Thread.sleep(5000);
 		msgbx.sendKeys("Hello chaii peelo!");
+		msgbx.sendKeys(Keys.ENTER);	
 		
 		
 		
